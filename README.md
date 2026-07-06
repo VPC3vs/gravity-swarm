@@ -72,6 +72,14 @@ python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github
   --path skills/gravity
 ```
 
+On Windows PowerShell:
+
+```powershell
+python "$env:USERPROFILE\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo VPC3vs/gravity-swarm `
+  --path skills/gravity
+```
+
 Or copy `skills/gravity` into your local Codex skills directory:
 
 ```text
