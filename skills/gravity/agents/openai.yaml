@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gravity"
+  short_description: "Token-lean AI swarm gravity"
+  default_prompt: "Use $gravity to plan and execute a lean coding or product-design task with delegated subagents."

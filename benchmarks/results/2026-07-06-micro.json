@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-06",
+  "environment": "Codex desktop thread",
+  "scope": "one paired baseline/gravity trial per prompt",
+  "metric": "non-empty LOC inside returned HTML code block",
+  "limitations": [
+    "small sample",
+    "not a token, latency, or billing benchmark",
+    "trial outputs were generated in a live assistant thread"
+  ],
+  "trials": [
+    {
+      "trial": "baseline-date",
+      "prompt": "date picker",
+      "non_empty_loc": 177,
+      "uses_native_date_input": true,
+      "uses_native_color_input": false,
+      "external_dependencies_count": 0,
+      "required_ui_present": true
+    },
+    {
+      "trial": "gravity-date",
+      "prompt": "date picker",
+      "non_empty_loc": 177,
+      "uses_native_date_input": true,
+      "uses_native_color_input": false,
+      "external_dependencies_count": 0,
+      "required_ui_present": true
+    },
+    {
+      "trial": "baseline-color",
+      "prompt": "color picker",
+      "non_empty_loc": 222,
+      "uses_native_date_input": false,
+      "uses_native_color_input": true,
+      "external_dependencies_count": 0,
+      "required_ui_present": true
+    },
+    {
+      "trial": "gravity-color",
+      "prompt": "color picker",
+      "non_empty_loc": 241,
+      "uses_native_date_input": false,
+      "uses_native_color_input": true,
+      "external_dependencies_count": 0,
+      "required_ui_present": true
+    },
+    {
+      "trial": "baseline-city",
+      "prompt": "city picker",
+      "non_empty_loc": 289,
+      "uses_native_date_input": false,
+      "uses_native_color_input": false,
+      "external_dependencies_count": 0,
+      "required_ui_present": true
+    },
+    {
+      "trial": "gravity-city",
+      "prompt": "city picker",
+      "non_empty_loc": 261,
+      "uses_native_date_input": false,
+      "uses_native_color_input": false,
+      "external_dependencies_count": 0,
+      "required_ui_present": true
+    }
+  ],
+  "totals": {
+    "baseline_loc": 688,
+    "gravity_loc": 679,
+    "loc_delta": -9,
+    "loc_delta_percent": -1.3
+  }
+}
