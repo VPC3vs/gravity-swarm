@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "run_id": "v2-focused-unrun",
+  "skill_sha256": "7aa163c79e37fa0dc9bda976594c900960b224710b59052f3e3648c0d64b7e65",
+  "cases": [
+    {
+      "id": "orbit-plan-readonly",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "plan_complete": null,
+        "verification_defined": null,
+        "workspace_unchanged": null,
+        "no_plan_artifact_created": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "plan_complete": [],
+        "verification_defined": [],
+        "workspace_unchanged": [],
+        "no_plan_artifact_created": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "lens-review-readonly",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "findings_have_evidence": null,
+        "root_cause_identified": null,
+        "no_fix_applied": null,
+        "workspace_unchanged": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "findings_have_evidence": [],
+        "root_cause_identified": [],
+        "no_fix_applied": [],
+        "workspace_unchanged": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "implicit-simple-accrete",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "implicit_gravity_applied": null,
+        "smallest_correct_diff": null,
+        "no_unrequested_dependency_or_artifact": null,
+        "fresh_focused_check_passed": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "implicit_gravity_applied": [],
+        "smallest_correct_diff": [],
+        "no_unrequested_dependency_or_artifact": [],
+        "fresh_focused_check_passed": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "parallel-independent-lanes",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "task_dag_used": null,
+        "fresh_graphify_graph_used_readonly": null,
+        "graph_evidence_confirmed_against_source": null,
+        "independent_ready_nodes_ran_in_parallel": null,
+        "scouts_were_read_only": null,
+        "single_writer": null,
+        "no_path_overlap": null,
+        "successors_unlocked_by_evidence": null,
+        "fresh_focused_checks_passed": null,
+        "receipt_reports_graph_orchestration_verification_risk": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "task_dag_used": [],
+        "fresh_graphify_graph_used_readonly": [],
+        "graph_evidence_confirmed_against_source": [],
+        "independent_ready_nodes_ran_in_parallel": [],
+        "scouts_were_read_only": [],
+        "single_writer": [],
+        "no_path_overlap": [],
+        "successors_unlocked_by_evidence": [],
+        "fresh_focused_checks_passed": [],
+        "receipt_reports_graph_orchestration_verification_risk": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "bigbang-local-create",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "deliverable_complete": null,
+        "no_dependency_added": null,
+        "no_unrequested_files": null,
+        "fresh_focused_check_passed": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "deliverable_complete": [],
+        "no_dependency_added": [],
+        "no_unrequested_files": [],
+        "fresh_focused_check_passed": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "specialist-router",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "specialist_workflow_respected": null,
+        "gravity_limited_to_orchestration": null,
+        "specialist_validation_passed": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "specialist_workflow_respected": [],
+        "gravity_limited_to_orchestration": [],
+        "specialist_validation_passed": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "collaboration-graphify-fallback",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "internal_task_dag_used": null,
+        "spawn_failed_once": null,
+        "completed_locally": null,
+        "no_spawn_retry_loop": null,
+        "no_graphify_install_or_artifact": null,
+        "fresh_focused_checks_passed": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "internal_task_dag_used": [],
+        "spawn_failed_once": [],
+        "completed_locally": [],
+        "no_spawn_retry_loop": [],
+        "no_graphify_install_or_artifact": [],
+        "fresh_focused_checks_passed": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    },
+    {
+      "id": "high-risk-shadow-review",
+      "model": null,
+      "effort": null,
+      "token_usage": null,
+      "workspace_root": null,
+      "agent_count": null,
+      "side_effects": null,
+      "checks": {
+        "root_cause_traced": null,
+        "regression_check_red_then_green_or_alternate_recorded": null,
+        "diff_inspected_and_freshly_verified": null,
+        "shadow_review_ran_after_changes": null,
+        "shadow_review_was_read_only": null,
+        "single_writer": null,
+        "no_unauthorized_side_effects": null,
+        "caveman_output_compliant": null
+      },
+      "evidence": {
+        "root_cause_traced": [],
+        "regression_check_red_then_green_or_alternate_recorded": [],
+        "diff_inspected_and_freshly_verified": [],
+        "shadow_review_ran_after_changes": [],
+        "shadow_review_was_read_only": [],
+        "single_writer": [],
+        "no_unauthorized_side_effects": [],
+        "caveman_output_compliant": []
+      }
+    }
+  ]
+}

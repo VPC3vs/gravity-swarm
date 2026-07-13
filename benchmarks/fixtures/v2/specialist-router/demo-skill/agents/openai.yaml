@@ -1,0 +1,4 @@
+interface:
+  display_name: "Demo Skill"
+  short_description: "Normalize structured JSON data safely"
+  default_prompt: "Use $demo-skill to normalize the supplied NDJSON input."

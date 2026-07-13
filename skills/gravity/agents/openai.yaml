@@ -1,4 +1,7 @@
 interface:
   display_name: "Gravity"
-  short_description: "Token-lean AI swarm gravity"
-  default_prompt: "Use $gravity to plan and execute a lean coding or product-design task with delegated subagents."
+  short_description: "Lean GPT-routed orchestration for coding"
+  default_prompt: "Use $gravity to choose /orbit, /lens, /accrete, or /bigbang and delegate only when independent work justifies it."
+
+policy:
+  allow_implicit_invocation: true

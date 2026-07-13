@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "fixtures_root": "fixtures/v2",
+  "cases": [
+    {
+      "id": "orbit-plan-readonly",
+      "prompt": "/orbit Plan a dependency-free Node command that reads one JSON file and prints the number of top-level keys. Include assumptions, success criteria, implementation steps, verification, and risks. Do not modify files.",
+      "setup": {
+        "workspace": {
+          "kind": "empty"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 0,
+        "side_effects": [],
+        "checks": [
+          "plan_complete",
+          "verification_defined",
+          "workspace_unchanged",
+          "no_plan_artifact_created",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "lens-review-readonly",
+      "prompt": "/lens Review this JavaScript authentication helper for correctness and security. Reproduce or explain the fault from the code, report findings with evidence, and do not change files:\n\nexport function isAdmin(user) {\n  return user.role = \"admin\";\n}",
+      "setup": {
+        "workspace": {
+          "kind": "empty"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 0,
+        "side_effects": [],
+        "checks": [
+          "findings_have_evidence",
+          "root_cause_identified",
+          "no_fix_applied",
+          "workspace_unchanged",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "implicit-simple-accrete",
+      "prompt": "In the prepared one-file CLI fixture, change the greeting from \"Hello\" to \"Welcome\", update only the affected test if needed, and run its focused check.",
+      "setup": {
+        "workspace": {
+          "kind": "copy",
+          "fixture": "implicit-accrete"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 0,
+        "side_effects": [
+          "workspace_write"
+        ],
+        "checks": [
+          "implicit_gravity_applied",
+          "smallest_correct_diff",
+          "no_unrequested_dependency_or_artifact",
+          "fresh_focused_check_passed",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "parallel-independent-lanes",
+      "prompt": "In the prepared fixture, a fresh graphify-out/graph.json is already present. Add CSV and JSON export support with focused checks for each format, then verify the combined command. Use independent read-only scouting only when justified; do not install or rebuild Graphify.",
+      "setup": {
+        "workspace": {
+          "kind": "copy",
+          "fixture": "parallel-exports"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent",
+          "graphify_graph": "fresh"
+        }
+      },
+      "expect": {
+        "agent_count": 2,
+        "side_effects": [
+          "workspace_write"
+        ],
+        "checks": [
+          "task_dag_used",
+          "fresh_graphify_graph_used_readonly",
+          "graph_evidence_confirmed_against_source",
+          "independent_ready_nodes_ran_in_parallel",
+          "scouts_were_read_only",
+          "single_writer",
+          "no_path_overlap",
+          "successors_unlocked_by_evidence",
+          "fresh_focused_checks_passed",
+          "receipt_reports_graph_orchestration_verification_risk",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "bigbang-local-create",
+      "prompt": "/bigbang Create a local dependency-free Node CLI that reads a JSON file and prints the number of top-level keys. Include one runnable check. Do not install, deploy, or publish anything.",
+      "setup": {
+        "workspace": {
+          "kind": "empty"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 0,
+        "side_effects": [
+          "workspace_write"
+        ],
+        "checks": [
+          "deliverable_complete",
+          "no_dependency_added",
+          "no_unrequested_files",
+          "fresh_focused_check_passed",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "specialist-router",
+      "prompt": "Use $gravity and $skill-creator to update the prepared demo skill so it also triggers for CSV normalization requests. Preserve its existing workflow and run the specialist validator.",
+      "setup": {
+        "workspace": {
+          "kind": "copy",
+          "fixture": "specialist-router"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 0,
+        "side_effects": [
+          "workspace_write"
+        ],
+        "checks": [
+          "specialist_workflow_respected",
+          "gravity_limited_to_orchestration",
+          "specialist_validation_passed",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "collaboration-graphify-fallback",
+      "prompt": "In the prepared fixture, add CSV and JSON export support with focused checks for each format, then verify the combined command locally.",
+      "setup": {
+        "workspace": {
+          "kind": "copy",
+          "fixture": "fallback-exports"
+        },
+        "capabilities": {
+          "collaboration": "spawn_fails",
+          "graphify_cli": "absent",
+          "graphify_graph": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 0,
+        "side_effects": [
+          "workspace_write"
+        ],
+        "checks": [
+          "internal_task_dag_used",
+          "spawn_failed_once",
+          "completed_locally",
+          "no_spawn_retry_loop",
+          "no_graphify_install_or_artifact",
+          "fresh_focused_checks_passed",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    },
+    {
+      "id": "high-risk-shadow-review",
+      "prompt": "In the prepared fixture, fix the authentication middleware so revoked sessions are rejected before protected handlers run. Add the focused regression check and verify the change.",
+      "setup": {
+        "workspace": {
+          "kind": "copy",
+          "fixture": "shadow-review"
+        },
+        "capabilities": {
+          "collaboration": "available",
+          "graphify_cli": "absent"
+        }
+      },
+      "expect": {
+        "agent_count": 1,
+        "side_effects": [
+          "workspace_write"
+        ],
+        "checks": [
+          "root_cause_traced",
+          "regression_check_red_then_green_or_alternate_recorded",
+          "diff_inspected_and_freshly_verified",
+          "shadow_review_ran_after_changes",
+          "shadow_review_was_read_only",
+          "single_writer",
+          "no_unauthorized_side_effects",
+          "caveman_output_compliant"
+        ]
+      }
+    }
+  ]
+}
