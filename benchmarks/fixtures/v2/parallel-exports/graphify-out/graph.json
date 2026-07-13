@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "source_root": "..",
+    "fixture_fresh": true
+  },
+  "nodes": [
+    {
+      "id": "src-cli",
+      "name": "src/cli.mjs",
+      "type": "file",
+      "source": "src/cli.mjs",
+      "community": 1
+    },
+    {
+      "id": "src-csv",
+      "name": "src/csv.mjs",
+      "type": "file",
+      "source": "src/csv.mjs",
+      "community": 2
+    },
+    {
+      "id": "src-json",
+      "name": "src/json.mjs",
+      "type": "file",
+      "source": "src/json.mjs",
+      "community": 3
+    },
+    {
+      "id": "csv-spec",
+      "name": "spec/csv.md",
+      "type": "document",
+      "source": "spec/csv.md",
+      "community": 2
+    },
+    {
+      "id": "json-spec",
+      "name": "spec/json.md",
+      "type": "document",
+      "source": "spec/json.md",
+      "community": 3
+    },
+    {
+      "id": "cli-test",
+      "name": "test/cli.test.mjs",
+      "type": "file",
+      "source": "test/cli.test.mjs",
+      "community": 1
+    },
+    {
+      "id": "csv-test",
+      "name": "test/csv.test.mjs",
+      "type": "file",
+      "source": "test/csv.test.mjs",
+      "community": 2
+    },
+    {
+      "id": "json-test",
+      "name": "test/json.test.mjs",
+      "type": "file",
+      "source": "test/json.test.mjs",
+      "community": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "csv-spec",
+      "target": "src-csv",
+      "relation": "documents",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "json-spec",
+      "target": "src-json",
+      "relation": "documents",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "src-cli",
+      "target": "src-csv",
+      "relation": "imports",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "src-cli",
+      "target": "src-json",
+      "relation": "imports",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "cli-test",
+      "target": "src-cli",
+      "relation": "tests",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "csv-test",
+      "target": "src-csv",
+      "relation": "tests",
+      "confidence": "EXTRACTED"
+    },
+    {
+      "source": "json-test",
+      "target": "src-json",
+      "relation": "tests",
+      "confidence": "EXTRACTED"
+    }
+  ]
+}
