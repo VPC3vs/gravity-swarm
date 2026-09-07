@@ -1,7 +1,7 @@
 interface:
   display_name: "Gravity · Astra"
-  short_description: "Astra-led orchestration with minimal code and context"
-  default_prompt: "Use $gravity to choose /orbit, /lens, /accrete, or /bigbang, coordinate with Astra when available, and delegate useful independent work."
+  short_description: "Astra-only orchestration with low, medium, and ultra"
+  default_prompt: "Use $gravity with GPT-6 Astra only: ultra for the coordinator, medium for substantial workers, and low for routine workers."
 
 policy:
   allow_implicit_invocation: true

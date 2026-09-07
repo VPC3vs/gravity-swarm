@@ -23,14 +23,13 @@ Gravity applies automatically to coding tasks. For other work, name Gravity, use
 
 The coordinator handles scope, tradeoffs, integration, and acceptance. Routine reversible choices proceed within the user's request; material ambiguity gets a focused question while independent work continues. Mid-task corrections steer the active objective, and completed work survives compaction.
 
-| Role | Preferred model | Fallback |
+| Role | Model | Reasoning effort |
 |---|---|---|
-| Coordinator / judge | `gpt-6-astra` | `gpt-5.6-sol`, then `gpt-5.5` at `xhigh` |
-| Strong worker | `gpt-5.6-terra` | `gpt-5.5` at `high` |
-| Routine scout / cheap worker | `gpt-5.6-luna` | `gpt-5.5` at `low` |
-| Short coding loop | `gpt-5.5` at `low` | Available coordinator; no lower tier |
+| Coordinator / judge | `gpt-6-astra` | `ultra` |
+| Substantial bounded worker / Shadow Review | `gpt-6-astra` | `medium` |
+| Routine scout / short coding loop | `gpt-6-astra` | `low` |
 
-These are routing preferences, subject to the runtime and explicit user choices. Installing a skill does not switch the running model. Select Astra in the host when available; without model controls, Gravity uses inheritance rather than spawning a replacement coordinator. Configured effort is preserved unless a supported adjustment helps the task. Astra never receives `none` reasoning effort.
+Gravity uses Astra only, with no other-model fallback. “Mid” means `medium`. Select Astra at `ultra` for the coordinator in the host; installing the skill cannot switch the running model. Workers use explicit model and effort controls or confirmed matching inheritance. When worker settings cannot be guaranteed, the Astra coordinator handles their work at `ultra`. If the coordinator pairing itself cannot be established, Gravity reports the limitation and asks for the host setting rather than substituting another model or effort.
 
 The revision follows [OpenAI's Astra guidance](https://developers.openai.com/api/docs/guides/latest-model) on explicit delegation criteria, autonomous follow-through, concise writing, and proportionate verification. Routing is a project policy, not an official cost recommendation. No token, latency, or quality improvement is claimed without measurement.
 
@@ -40,7 +39,7 @@ Inspect instructions, capabilities, specialist requirements, and existing change
 
 A fresh existing `graphify-out/graph.json` helps identify ownership and dependencies. Confirm graph evidence against sources and tests. Disable CLI query logging with `GRAPHIFY_QUERY_LOG_DISABLE=1`; never implicitly install or rebuild Graphify. If absent or stale and no refresh is authorized, use source evidence and report the fallback.
 
-Use agents for at least two substantial independent lanes, normally with at most two read-only scouts. A third requires a distinct lane and capacity. Keep one writer at a time and forbid nested spawning. Failed spawns fall back to local work. Insufficient read-only results get at most one stronger-role escalation. High-risk changes receive one post-write read-only Shadow Review when supported; otherwise disclose local review.
+Use agents for at least two substantial independent lanes, normally with at most two read-only scouts. A third requires a distinct lane and capacity. Keep one writer at a time and forbid nested spawning. Failed spawns return to the Astra coordinator. Insufficient read-only results at `low` may get one Astra retry at `medium`, then return to the coordinator at `ultra`; results already at `medium` return directly. High-risk changes receive one post-write read-only Shadow Review when supported; otherwise disclose local review.
 
 ## Keep the implementation small
 

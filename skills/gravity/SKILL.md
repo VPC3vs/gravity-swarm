@@ -26,18 +26,17 @@ Make routine reversible choices within scope; state assumptions that affect impl
 
 ## Give Astra the right job
 
-The coordinator owns planning, difficult tradeoffs, acceptance, integration, and delivery. Apply these role preferences only when runtime model selection is exposed and permitted:
+The coordinator owns planning, difficult tradeoffs, acceptance, integration, and delivery. Use only `gpt-6-astra`, with reasoning effort assigned by role:
 
-| Role | Preferred model | Fallback |
+| Role | Model | Reasoning effort |
 |---|---|---|
-| Coordinator / judge | `gpt-6-astra` | `gpt-5.6-sol`, then `gpt-5.5` with `xhigh` |
-| Strong bounded worker | `gpt-5.6-terra` | `gpt-5.5` with `high` |
-| Routine scout / cheap worker | `gpt-5.6-luna` | `gpt-5.5` with `low` |
-| Short coding loop | `gpt-5.5` with `low` | Retain the available coordinator; no lower tier |
+| Coordinator / judge | `gpt-6-astra` | `ultra` |
+| Substantial bounded worker / Shadow Review | `gpt-6-astra` | `medium` |
+| Routine scout / short coding loop | `gpt-6-astra` | `low` |
 
-Preserve explicit user model choices. Do not spawn a replacement coordinator merely to satisfy the table. When controls or a preferred model are unavailable, use supported inheritance or an available fallback. Never invent model IDs or tool fields. Report deviations that materially affect the result.
+There are no other-model fallbacks. Set model and effort explicitly when supported. Use inheritance only when the runtime confirms Astra and the required effort. If worker controls cannot guarantee the pairing, keep that work with the Astra coordinator at `ultra`. If the coordinator is not already Astra at `ultra` and cannot be configured, report the limitation and ask the user to select that pairing in the host; do not silently substitute another model or effort. Do not spawn a replacement coordinator merely to satisfy the table or invent unsupported tool fields.
 
-Keep configured reasoning effort unless a supported task-specific adjustment is useful. Prefer `medium` for ordinary Astra coordination, `high` for difficult integration, and `low` for straightforward follow-ups. Reserve higher supported effort for unresolved complexity; do not request `none` for Astra. These are workflow preferences, not cost or speed guarantees.
+Use only `low`, `medium` (the user's “mid”), and `ultra`. The coordinator remains at `ultra`; worker effort depends on the bounded task, not a model change. These are workflow settings, not cost or speed guarantees.
 
 ## Establish evidence, then split
 
@@ -71,7 +70,7 @@ Return: findings or changes, sources, fresh checks, touched files,
 blockers, and remaining uncertainty.
 ```
 
-Keep review briefs neutral. Reports are claims: inspect evidence and diffs before accepting them. If spawning fails, finish locally without a retry loop. For an insufficient read-only result, allow one escalation to the next available stronger role in this order: Luna, Terra, Sol, Astra. Then resolve locally or report the blocker; do not cycle tiers. Inspect written work before retrying. Never automatically retry external or irreversible mutations.
+Keep review briefs neutral. Reports are claims: inspect evidence and diffs before accepting them. If spawning fails, finish with the Astra coordinator without a retry loop. An insufficient read-only result at `low` may receive one retry on Astra at `medium`; if still insufficient, the coordinator resolves it at `ultra` or reports the blocker. A result already produced at `medium` goes directly to the coordinator. Do not change models or cycle effort levels. Inspect written work before retrying. Never automatically retry external or irreversible mutations.
 
 After changes involving security, authentication, money, sensitive data, migrations, or multiple interacting areas, use one independent read-only Shadow Review when available and permitted. This is the one-lane exception. Otherwise review locally and disclose the limitation. Skip it for trivial changes.
 
