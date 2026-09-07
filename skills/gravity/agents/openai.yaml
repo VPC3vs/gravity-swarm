@@ -1,7 +1,7 @@
 interface:
-  display_name: "Gravity"
-  short_description: "Lean GPT-routed orchestration for coding"
-  default_prompt: "Use $gravity to choose /orbit, /lens, /accrete, or /bigbang and delegate only when independent work justifies it."
+  display_name: "Gravity · Astra"
+  short_description: "Astra-led orchestration with minimal code and context"
+  default_prompt: "Use $gravity to choose /orbit, /lens, /accrete, or /bigbang, coordinate with Astra when available, and delegate useful independent work."
 
 policy:
   allow_implicit_invocation: true
