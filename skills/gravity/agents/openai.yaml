@@ -1,7 +1,7 @@
 interface:
-  display_name: "Gravity · Astra"
-  short_description: "Astra-only orchestration with low, medium, and ultra"
-  default_prompt: "Use $gravity with GPT-6 Astra only: ultra for the coordinator, medium for substantial workers, and low for routine workers."
+  display_name: "Gravity · GPT-6"
+  short_description: "Astra coordination with Luna, Terra, and Sol workers"
+  default_prompt: "Use $gravity: GPT-6 Astra at max coordinates and judges; GPT-6 Luna handles routine work, GPT-6 Terra handles bounded implementation when supported, and GPT-6 Sol handles complex work and review."
 
 policy:
   allow_implicit_invocation: true

@@ -1,11 +1,11 @@
 ---
 name: gravity
-description: Astra-led orchestration for coding tasks, and for other work when Gravity, /orbit, /lens, /accrete, /bigbang, a swarm, or Gravity token economy is requested. Combines selective GPT delegation, Graphify evidence, Ponytail minimal code, and Caveman concise delivery; specialist skills retain domain authority.
+description: Astra-coordinated GPT-6 worker routing for coding tasks, and for other work when Gravity, /orbit, /lens, /accrete, /bigbang, a swarm, or Gravity token economy is requested. Combines selective delegation, Graphify evidence, Ponytail minimal code, and Caveman concise delivery; specialist skills retain domain authority.
 ---
 
-# Gravity · Astra
+# Gravity · GPT-6
 
-Use GPT-6 Astra to own the outcome: understand the request, choose useful work, integrate evidence, and finish. Spend tokens on decisions and verification that matter. A swarm is useful only when independent results justify coordination.
+Use GPT-6 Astra at `max` to coordinate the outcome: understand the request, route useful work, judge results, integrate evidence, and finish. Route primary implementation and review to suitable GPT-6 workers. A swarm is useful only when independent results justify coordination.
 
 Apply implicitly to coding work and explicitly to other work through Gravity, its four modes, or a swarm request. Honor requests to avoid Gravity or agents. System and developer instructions, user scope, repository guidance, and specialist requirements govern this workflow. This skill grants no additional permissions and cannot change the running model itself.
 
@@ -24,19 +24,20 @@ Keep a brief internal envelope: mode, authority, scope, independent lanes, owned
 
 Make routine reversible choices within scope; state assumptions that affect implementation. Ask when the missing answer changes correctness, authority, or an irreversible decision. Continue independent work while waiting; elapsed time is not approval. Treat mid-task corrections as steering, preserving completed work and the original objective unless replaced. After compaction, resume from evidence instead of restarting discovery.
 
-## Give Astra the right job
+## Route GPT-6 work
 
-The coordinator owns planning, difficult tradeoffs, acceptance, integration, and delivery. Use only `gpt-6-astra`, with reasoning effort assigned by role:
+The coordinator owns planning, difficult tradeoffs, acceptance, integration, and delivery. It may inspect sources and make routine integration edits, but is almost never the primary worker. Route by task and confirmed host capability:
 
 | Role | Model | Reasoning effort |
 |---|---|---|
-| Coordinator / judge | `gpt-6-astra` | `ultra` |
-| Substantial bounded worker / Shadow Review | `gpt-6-astra` | `medium` |
-| Routine scout / short coding loop | `gpt-6-astra` | `low` |
+| Coordinator / judge / integrator | `gpt-6-astra` | `max` |
+| Routine scoped work | `gpt-6-luna` | `low` or `medium` |
+| Bounded implementation, only if exposed by the host | `gpt-6-terra` | `medium` |
+| Complex work and independent review | `gpt-6-sol` | `medium` or `high` |
 
-There are no other-model fallbacks. Set model and effort explicitly when supported. Use inheritance only when the runtime confirms Astra and the required effort. If worker controls cannot guarantee the pairing, keep that work with the Astra coordinator at `ultra`. If the coordinator is not already Astra at `ultra` and cannot be configured, report the limitation and ask the user to select that pairing in the host; do not silently substitute another model or effort. Do not spawn a replacement coordinator merely to satisfy the table or invent unsupported tool fields.
+Start with the smallest suitable available worker; do not force clearly unsuitable models through serial attempts. A small serial task already running on a suitable confirmed non-Astra GPT-6 pairing can finish locally without an Astra coordinator. Terra is conditional, not assumed available: use `gpt-6-terra` only when the host confirms that model and effort. Set delegated worker model and effort explicitly; use inheritance only when the pairing is confirmed. When coordination is needed, use Astra at `max`; if that pairing cannot be configured, report the limitation and ask for the host setting. A skill cannot change the running model. Do not spawn a replacement coordinator or invent unsupported tool fields.
 
-Use only `low`, `medium` (the user's “mid”), and `ultra`. The coordinator remains at `ultra`; worker effort depends on the bounded task, not a model change. These are workflow settings, not cost or speed guarantees.
+Do not silently downgrade to GPT-5.6 or another provider. These are workflow roles, not cost or speed guarantees.
 
 ## Establish evidence, then split
 
@@ -50,9 +51,9 @@ For substantial delegated work, keep an internal task DAG. Each node records a b
 
 ## Delegate when independent work pays off
 
-Use agents when at least two substantial independent lanes can run alongside useful coordinator work. Each needs a distinct deliverable or risk area and focused verification. Short edits can qualify when their risk areas are independent; two labels for one coupled edit do not. Stay solo for small, serial, same-file, or tightly coupled work.
+For small or serial primary work, continue locally if the running model is a suitable confirmed non-Astra GPT-6 pairing; otherwise delegate to one suitable non-Astra worker when permitted by user, host, and higher-priority instructions. Do not manufacture a swarm. Use multiple workers only when at least two substantial independent lanes can run alongside useful coordinator work. Each needs a distinct deliverable or risk area and focused verification. Short edits can qualify when their risk areas are independent; two labels for one coupled edit do not.
 
-Normally use at most two read-only scouts; use a third only for a real third lane and available capacity. Keep one writer at a time, normally the coordinator. Delegated writers receive exclusive paths; the coordinator does not write concurrently. Only the coordinator spawns; forbid nested agents.
+Normally use at most two read-only scouts; use a third only for a real third lane and available capacity. Keep one writer at a time. Delegated writers receive exclusive paths; the coordinator does not write concurrently. Only the coordinator spawns; forbid nested agents.
 
 Pass a bounded brief, not the conversation history. Include relevant raw sources, interfaces, constraints, and graph evidence:
 
@@ -70,7 +71,7 @@ Return: findings or changes, sources, fresh checks, touched files,
 blockers, and remaining uncertainty.
 ```
 
-Keep review briefs neutral. Reports are claims: inspect evidence and diffs before accepting them. If spawning fails, finish with the Astra coordinator without a retry loop. An insufficient read-only result at `low` may receive one retry on Astra at `medium`; if still insufficient, the coordinator resolves it at `ultra` or reports the blocker. A result already produced at `medium` goes directly to the coordinator. Do not change models or cycle effort levels. Inspect written work before retrying. Never automatically retry external or irreversible mutations.
+Keep review briefs neutral. Reports are claims: inspect evidence and diffs before accepting them. If a worker fails acceptance, inspect its output, then give the unresolved portion and failure evidence to the next suitable untried non-Astra worker. Do not retry a clearly unsuitable model or cycle efforts without cause. Astra executes the unresolved portion only when every suitable available non-Astra option has been attempted and failed acceptance. Unavailable models, disabled delegation, and failed spawns are not failed worker attempts: report the blocker or request host capability rather than promoting primary work to Astra. Never automatically retry external or irreversible mutations.
 
 After changes involving security, authentication, money, sensitive data, migrations, or multiple interacting areas, use one independent read-only Shadow Review when available and permitted. This is the one-lane exception. Otherwise review locally and disclose the limitation. Skip it for trivial changes.
 
