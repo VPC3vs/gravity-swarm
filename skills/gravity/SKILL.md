@@ -1,11 +1,11 @@
 ---
 name: gravity
-description: Astra-coordinated GPT-6 worker routing for coding tasks, and for other work when Gravity, /orbit, /lens, /accrete, /bigbang, a swarm, or Gravity token economy is requested. Combines selective delegation, Graphify evidence, Ponytail minimal code, and Caveman concise delivery; specialist skills retain domain authority.
+description: GPT-6 Astra coordination with Luna for routine work and Sol 6.1 for implementation, complex work, and review. For coding tasks, or when Gravity, /orbit, /lens, /accrete, /bigbang, a swarm, or Gravity token economy is requested. Combines selective delegation, Graphify evidence, Ponytail minimal code, and Caveman concise delivery; specialist skills retain domain authority.
 ---
 
 # Gravity · GPT-6
 
-Use GPT-6 Astra at `max` to coordinate the outcome: understand the request, route useful work, judge results, integrate evidence, and finish. Route primary implementation and review to suitable GPT-6 workers. A swarm is useful only when independent results justify coordination.
+Use `gpt-6-astra` at `max` to coordinate the outcome: understand the request, route useful work, judge results, integrate evidence, and finish. Use only `gpt-6-luna` for routine work and `gpt-6.1-sol` for implementation, complex work, and review. These are the only allowed models. A swarm is useful only when independent results justify coordination.
 
 Apply implicitly to coding work and explicitly to other work through Gravity, its four modes, or a swarm request. Honor requests to avoid Gravity or agents. System and developer instructions, user scope, repository guidance, and specialist requirements govern this workflow. This skill grants no additional permissions and cannot change the running model itself.
 
@@ -32,12 +32,11 @@ The coordinator owns planning, difficult tradeoffs, acceptance, integration, and
 |---|---|---|
 | Coordinator / judge / integrator | `gpt-6-astra` | `max` |
 | Routine scoped work | `gpt-6-luna` | `low` or `medium` |
-| Bounded implementation, only if exposed by the host | `gpt-6-terra` | `medium` |
-| Complex work and independent review | `gpt-6-sol` | `medium` or `high` |
+| Implementation, complex work, and independent review | `gpt-6.1-sol` | `medium` or `high` |
 
-Start with the smallest suitable available worker; do not force clearly unsuitable models through serial attempts. A small serial task already running on a suitable confirmed non-Astra GPT-6 pairing can finish locally without an Astra coordinator. Terra is conditional, not assumed available: use `gpt-6-terra` only when the host confirms that model and effort. Set delegated worker model and effort explicitly; use inheritance only when the pairing is confirmed. When coordination is needed, use Astra at `max`; if that pairing cannot be configured, report the limitation and ask for the host setting. A skill cannot change the running model. Do not spawn a replacement coordinator or invent unsupported tool fields.
+Use Luna for routine scoped work and Sol 6.1 for implementation, complex work, and independent review. A small serial task already running on a suitable confirmed `gpt-6-luna` or `gpt-6.1-sol` pairing can finish locally without an Astra coordinator. Only `gpt-6.1-sol`, `gpt-6-luna`, and `gpt-6-astra` are allowed; do not substitute other versions or providers. Set delegated worker model and effort explicitly; use inheritance only when the pairing is confirmed. When coordination is needed, use `gpt-6-astra` at `max`; if that pairing cannot be configured, report the limitation and ask for the host setting. A skill cannot change the running model. Do not spawn a replacement coordinator or invent unsupported tool fields.
 
-Do not silently downgrade to GPT-5.6 or another provider. These are workflow roles, not cost or speed guarantees.
+These are workflow roles, not cost or speed guarantees.
 
 ## Establish evidence, then split
 
@@ -51,7 +50,7 @@ For substantial delegated work, keep an internal task DAG. Each node records a b
 
 ## Delegate when independent work pays off
 
-For small or serial primary work, continue locally if the running model is a suitable confirmed non-Astra GPT-6 pairing; otherwise delegate to one suitable non-Astra worker when permitted by user, host, and higher-priority instructions. Do not manufacture a swarm. Use multiple workers only when at least two substantial independent lanes can run alongside useful coordinator work. Each needs a distinct deliverable or risk area and focused verification. Short edits can qualify when their risk areas are independent; two labels for one coupled edit do not.
+For small or serial primary work, continue locally if the running model is a suitable confirmed `gpt-6-luna` or `gpt-6.1-sol` pairing; otherwise delegate to one suitable allowed non-Astra worker when permitted by user, host, and higher-priority instructions. Do not manufacture a swarm. Use multiple workers only when at least two substantial independent lanes can run alongside useful coordinator work. Each needs a distinct deliverable or risk area and focused verification. Short edits can qualify when their risk areas are independent; two labels for one coupled edit do not.
 
 Normally use at most two read-only scouts; use a third only for a real third lane and available capacity. Keep one writer at a time. Delegated writers receive exclusive paths; the coordinator does not write concurrently. Only the coordinator spawns; forbid nested agents.
 
@@ -71,7 +70,7 @@ Return: findings or changes, sources, fresh checks, touched files,
 blockers, and remaining uncertainty.
 ```
 
-Keep review briefs neutral. Reports are claims: inspect evidence and diffs before accepting them. If a worker fails acceptance, inspect its output, then give the unresolved portion and failure evidence to the next suitable untried non-Astra worker. Do not retry a clearly unsuitable model or cycle efforts without cause. Astra executes the unresolved portion only when every suitable available non-Astra option has been attempted and failed acceptance. Unavailable models, disabled delegation, and failed spawns are not failed worker attempts: report the blocker or request host capability rather than promoting primary work to Astra. Never automatically retry external or irreversible mutations.
+Keep review briefs neutral. Reports are claims: inspect evidence and diffs before accepting them. If a worker fails acceptance, inspect its output, then give the unresolved portion and failure evidence to the next suitable untried allowed non-Astra worker. Do not retry a clearly unsuitable model or cycle efforts without cause. Astra performs unresolved implementation only when every suitable available non-Astra option has been attempted and failed acceptance. Unavailable models, disabled delegation, and failed spawns are not failed worker attempts: report the blocker rather than promoting primary work to Astra. Never automatically retry external or irreversible mutations.
 
 After changes involving security, authentication, money, sensitive data, migrations, or multiple interacting areas, use one independent read-only Shadow Review when available and permitted. This is the one-lane exception. Otherwise review locally and disclose the limitation. Skip it for trivial changes.
 

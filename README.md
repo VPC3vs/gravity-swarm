@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/gravity-banner.png" alt="Hand-drawn black hole with Sol sun, Terra planet, and Luna moon mascots on notebook paper" width="1000">
+  <img src="assets/gravity-banner.png" alt="Hand-drawn black hole with Sol 6.1 sun, Luna 6.0 moon, and Astra 6.0 Max coordinator on notebook paper" width="1000">
 </p>
 
 # Gravity · GPT-6
 
-A lean orchestration skill for a GPT-6 Astra coordinator and GPT-6 workers. Keep the outcome in one coordinator's hands; delegate bounded work when useful.
+A lean orchestration skill for a GPT-6.0 Astra coordinator and GPT-6.0 / GPT-6.1 workers. Keep the outcome in one coordinator's hands; delegate bounded work when useful.
 
 Gravity preserves its four modes and core disciplines: Graphify-informed task dependencies, selective multi-agent work, one writer, evidence-based acceptance, Shadow Review, Ponytail minimal implementation, Caveman concise delivery, and specialist-led product verification.
 
@@ -19,7 +19,7 @@ Gravity preserves its four modes and core disciplines: Graphify-informed task de
 
 Gravity applies automatically to coding tasks. For other work, name Gravity, use a mode, or request a swarm. An authorized review-and-fix proceeds from findings to changes without another permission round. Specialist skills retain control of their domain tools, formats, and verification.
 
-## GPT-6 roles
+## Allowed model roles
 
 The coordinator handles scope, tradeoffs, integration, and acceptance. Routine reversible choices proceed within the user's request; material ambiguity gets a focused question while independent work continues. Mid-task corrections steer the active objective, and completed work survives compaction.
 
@@ -27,12 +27,11 @@ The coordinator handles scope, tradeoffs, integration, and acceptance. Routine r
 |---|---|---|
 | Coordinator / judge / integrator | `gpt-6-astra` | `max` |
 | Routine scoped worker | `gpt-6-luna` | `low` or `medium` |
-| Bounded implementation, if exposed by the host | `gpt-6-terra` | `medium` |
-| Complex work / independent review | `gpt-6-sol` | `medium` or `high` |
+| Implementation / complex work / independent review | `gpt-6.1-sol` | `medium` or `high` |
 
-When coordination is needed, select Astra at `max` in the host; installing the skill cannot switch the running model. A small serial task can stay with an already running, suitable confirmed non-Astra GPT-6 model. Delegated workers use explicit supported model and effort controls, or confirmed matching inheritance. Terra is a conditional role: use `gpt-6-terra` only if the host confirms that pairing. Gravity never silently substitutes GPT-5.6 or another provider. Routing is a project policy, not an official cost recommendation; no token, latency, or quality improvement is claimed without measurement.
+Only `gpt-6.1-sol`, `gpt-6-luna`, and `gpt-6-astra` are allowed. Use their exact model IDs; do not substitute another version or provider. When coordination is needed, select Astra at `max` in the host; installing the skill cannot switch the running model. A small serial task can stay with an already running, suitable confirmed `gpt-6-luna` or `gpt-6.1-sol` model. Delegated workers use explicit supported model and effort controls, or confirmed matching inheritance. Routing is a project policy, not an official cost recommendation; no token, latency, or quality improvement is claimed without measurement.
 
-Choose the smallest suitable available worker. If acceptance fails, inspect its output and pass the evidence to a suitable untried non-Astra worker. Astra executes the unresolved portion only after all suitable available non-Astra workers have failed. An unavailable model or failed spawn is not a failed worker; report the blocker or request host capability instead of promoting the work to Astra.
+Use Luna for routine work and Sol 6.1 for implementation, complex work, or independent review. If acceptance fails, inspect the output and pass evidence to another suitable, untried allowed worker. Astra executes unresolved implementation only after all suitable available non-Astra workers have failed. An unavailable model or failed spawn is not a failed worker; report the blocker instead of promoting the work to Astra.
 
 ## How work flows
 

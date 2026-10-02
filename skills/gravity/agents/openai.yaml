@@ -1,7 +1,7 @@
 interface:
   display_name: "Gravity · GPT-6"
-  short_description: "Astra coordination with Luna, Terra, and Sol workers"
-  default_prompt: "Use $gravity: GPT-6 Astra at max coordinates and judges; GPT-6 Luna handles routine work, GPT-6 Terra handles bounded implementation when supported, and GPT-6 Sol handles complex work and review."
+  short_description: "Astra 6.0 coordinates Luna 6.0 and Sol 6.1"
+  default_prompt: "Use $gravity: gpt-6-astra at max coordinates and judges; gpt-6-luna handles routine work, and gpt-6.1-sol handles implementation, complex work, and review. These are the only allowed models."
 
 policy:
   allow_implicit_invocation: true
